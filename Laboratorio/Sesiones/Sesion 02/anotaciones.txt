@@ -1,0 +1,27 @@
+javac *.java: compilamos todos los ficheros java generando los .class
+
+ejecutamos con java -Djava.compiler=NONE p11.Vector1
+
+	Separado por comas o uno mas blancos introducimos argumentos
+
+1ª pregunta:
+tipo long = 64 bits
+
+1 bit de signo	63 bits
+		2^63 milisegundos / x milisegundos en 1 año
+
+tiempos por debajo de 50 milisegundos NO SE LLEVAN A LA TABLA (POR FALTA DE FIABILIDAD)
+
+2ª pregunta:
+-Que el tamaño del problema es lo suficientemente menor como para que el algoritmo lo resuelva antes de que el recolector de basura salte (tu di que ye porque el algoritmo en el ordenador con el que medimos ye lo suficientemente rapido como para que la medicion sea inferior a 1 milisegundo)
+-Vamos probando para 10K, 20K, 1M, 2M, 100M
+
+
+¿Que pasa si multiplico el tamaño por 2? que el tiempo se multiplica por 2
+Y por k? que el tiempo se multiplica por k. Si se hace con una k cada vez mayor la medicion es cada vez menos exhaustiva
+
+
+para las tablas copiamos el mecanismo de Vector4 de repetir la operacion a realizar x repeticiones. Pondremos un numero de repeticiones desde 1 hasta que haga falta para poder ser tiempos fiables
+
+
+

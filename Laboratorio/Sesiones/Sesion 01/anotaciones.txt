@@ -1,0 +1,15 @@
+escribimos rutalaboratorio
+set path
+set classpath
+nos metemos en el paquete
+miramos contenido con dir
+ejecutamos con: javac nombreArchivoJava.java
+	generará un .class
+	
+	lo ejecutamos con java p0.JavaA1v0 (sin extension; estamos haciendo java nombrePaquete.archivoJava.class generado sin extension; NOS VAMOS FUERA DEL PAQUETE PARA EJECUTARLO)
+
+	---Alternativa (desactiva el optimizador de java, asi tenemos unos tiempos más fieles a la complejidad): java -Djava.compiler=NONE p0.JavaA1v0
+
+
+
+python es muy lento, más que java

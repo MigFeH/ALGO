@@ -1,0 +1,9 @@
+Bucle1: complejidad O(n * log(n)) // casi lineal
+Bucle2: complejidad O(n^(2) * log(n)) // casi cuadrática
+Bucle3: complejidad O(n^(2) * log(n)) 
+Bucle4: complejidad O(n^(3))
+
+
+
+
+

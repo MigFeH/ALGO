@@ -1,0 +1,8 @@
+complejidad n^2
+la espacial viene dada por la estructura de la tabla (n^2)
+	filas (longitud cadena) x columnas (longitud patron)
+la temporal es O(n^2)
+
+
+
+
