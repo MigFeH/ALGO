@@ -1,0 +1,41 @@
+Veamos ahora el algoritmo de Prim. Para su implementación vamos a necesitar
+definir dos tipos especiales:
+TYPE MASPROXIMO = ARRAY [2..n] OF CARDINAL;
+TYPE DISTMINIMA = ARRAY [2..n] OF CARDINAL;
+ALGORITMOS ÁVIDOS 159
+siendo MASPROXIMO[i] el vértice del conjunto de vértices tratados hasta el
+momento más cercano al vértice i, y DISTMINIMA[i] la distancia desde i a ese
+vértice más próximo. Así, podemos implementar el algoritmo de Prim como sigue:
+
+PROCEDURE Prim(VAR g:GRAFO_PONDERADO; VAR sol:GRAFO);
+ VAR masproximo:MASPROXIMO;distmin:DISTMINIMA;
+ min,i,j,k:CARDINAL;
+BEGIN
+ InicProx(g,masproximo,distmin);
+ FOR i:=2 TO n DO
+   min:=MAX(CARDINAL);
+   FOR j:=2 TO n DO
+     IF (distmin[j]<min) AND (distmin[j]<>0) THEN
+       min:=distmin[j]; k:=j
+     END
+   END;
+   sol[k,masproximo[k]]:=TRUE;
+   distmin[k]:=0;
+   FOR j:=2 TO n DO
+     IF (g[j,k]<distmin[k]) THEN
+       distmin[k]:=g[j,k];
+       masproximo[j]:=k
+     END
+   END
+ END
+END Prim;
+
+El procedimiento InicProx inicializa adecuadamente las variables:
+PROCEDURE InicProx (VAR g:GRAFO_PONDERADO;VAR v:MASPROXIMO;
+ VAR d:DISTMINIMA);
+ VAR i:CARDINAL;
+BEGIN
+ FOR i:=2 TO n DO
+ v[i]:=1; d[i]:=g[i,1]
+ END
+END InicProx;
